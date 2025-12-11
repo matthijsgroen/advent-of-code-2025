@@ -20,16 +20,11 @@ const parsedInput = input.reduce(
   }
 );
 
-// console.log(input);
-// console.log(parsedInput);
-
-const fresh = parsedInput.values.filter((value) => {
-  for (const [start, end] of parsedInput.ranges) {
-    if (value >= start && value <= end) {
-      return true;
-    }
+const fresh = new Set();
+for (const range of parsedInput.ranges) {
+  for (let i = range[0]; i <= range[1]; i++) {
+    fresh.add(i);
   }
-  return false;
-});
+}
 
-console.log(fresh.length);
+console.log(fresh.size);
