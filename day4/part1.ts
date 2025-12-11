@@ -1,6 +1,6 @@
 import { readFileSync } from "node:fs";
 
-const input = readFileSync("demo-input.txt", "utf-8").split("\n");
+const input = readFileSync("input.txt", "utf-8").split("\n");
 
 console.log(input);
 
