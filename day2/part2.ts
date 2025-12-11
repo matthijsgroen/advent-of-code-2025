@@ -7,7 +7,7 @@ const invalidIds: BigInt[] = [];
 const isInvalidId = (id: string): boolean => {
   for (let i = 0; i < id.length / 2; i++) {
     const pattern = id.slice(0, i + 1);
-    const match = id.match(new RegExp(`(${pattern}){2,}`));
+    const match = id.match(new RegExp(`^(${pattern}){2,}$`));
     if (match) return true;
   }
   return false;
